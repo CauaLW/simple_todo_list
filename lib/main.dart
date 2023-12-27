@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
-import 'package:simple_todo_list/atoms/task_atom.dart';
-import 'package:simple_todo_list/dtos/task_dto.dart';
 import 'package:simple_todo_list/entities/task_entity.dart';
 import 'package:simple_todo_list/pages/manage_task_page.dart';
 import 'package:simple_todo_list/pages/tasks_page.dart';
@@ -20,7 +18,8 @@ void main() async {
     version: 1,
     onCreate: (Database db, int version) async {
       // When creating the db, create the task table
-      await db.execute('CREATE TABLE Task (id INTEGER PRIMARY KEY, title TEXT, completed BOOL default true)');
+      await db.execute(
+          'CREATE TABLE Task (id INTEGER PRIMARY KEY, title TEXT, completed BOOL default true)');
     },
   );
 
@@ -66,7 +65,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Simple TODO',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple, brightness: Brightness.dark),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.deepPurple, brightness: Brightness.dark),
         useMaterial3: true,
       ),
       initialRoute: '/',
@@ -74,7 +74,8 @@ class MainApp extends StatelessWidget {
         '/': (_) => const TasksPage(),
         '/create': (_) => const ManageTask(),
         '/edit': (context) {
-          final entity = ModalRoute.of(context)?.settings.arguments as TaskEntity?;
+          final entity =
+              ModalRoute.of(context)?.settings.arguments as TaskEntity?;
           return ManageTask(entity: entity);
         }
       },

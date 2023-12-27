@@ -5,19 +5,18 @@ import 'package:sqflite/sqflite.dart';
 
 const String taskTable = 'Task';
 
-// TODO: implement services
 class TaskService {
   final Database db;
 
   TaskService(this.db);
 
   Future<List<TaskEntity>> fetchTasks() async {
-    final List<Map<String, Object?>> rawResults = await db.query(taskTable, orderBy: 'id');
+    final List<Map<String, Object?>> rawResults =
+        await db.query(taskTable, orderBy: 'id');
     final List<TaskEntity> tasks = List.generate(rawResults.length, (index) {
       final Map<String, Object?> map = rawResults[index];
       return TaskAdapter.fromMap(map);
     });
-    print(rawResults);
     return tasks;
   }
 
