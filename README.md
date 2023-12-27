@@ -1,16 +1,38 @@
-# simple_todo_list
+# Simple TODO List
 
-A new Flutter project.
+A basic Flutter app showcasing fundamental Flutter concepts, particularly native state management. This project is designed to serve as a learning resource and showcase of native state management.
+
+## Features
+
+- **Simple Interface**: Intuitive and user-friendly design for easy navigation.
+- **Native State Management**: Demonstrates the use of native Flutter state management techniques.
+- **Add and Remove Tasks**: Easily add new tasks to the list and remove completed tasks.
+- **Minimalistic Design**: Focuses on core functionality with a clean and minimalist interface.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run this project on your local machine, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    ```bash
+    git clone https://github.com/caualw/simple_todo_list.git
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Navigate to the project directory:
+
+    ```bash
+    cd simple_todo_list
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    flutter pub get
+    ```
+
+4. Run the app:
+
+    ```bash
+    flutter run
+    ```
